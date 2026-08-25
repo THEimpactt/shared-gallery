@@ -12,11 +12,11 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "body-parser": "^2.3.0",
+    "connect-mongo": "^6.0.0",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "express-validator": "^7.3.2",
-    "mongo-connect": "^0.0.6",
     "mongodb": "^7.5.0",
     "mongoose": "^9.9.3"
   }

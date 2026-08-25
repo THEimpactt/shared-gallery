@@ -3,9 +3,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const {MongoStore} = require('connect-mongo');
+const cors = require("cors");
 const app = express();
 
 const authRouter = require("./routes/authRouter");
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true
+  })
+);
 
 const store = MongoStore.create({
   mongoUrl: process.env.MONGODB_URI,
@@ -20,6 +28,7 @@ app.use(session({
 }));
 
 app.use(express.json());
+
 app.use("/api/auth", authRouter);
 
 mongoose.connect(process.env.MONGODB_URI)
